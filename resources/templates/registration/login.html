@@ -1,0 +1,65 @@
+{% extends 'themes/default/layouts/base.html' %}
+
+{% load i18n %}
+
+{% block content %}
+    <div class="form-signin mx-auto" style="max-width: 480px">
+        <div class="heading my-4">
+            <h2 class="heading-title">{% trans 'Login' %}</h2>
+        </div>
+
+        {% if form.errors %}
+            <div class="alert alert-danger d-flex my-4" role="alert">
+                <div class="align-items-center my-auto me-3"><i class="fa fa-warning"></i></div>
+                <div class="form-errors">
+                    {% for errors in form.errors.values %}
+                        <ul class="list-unstyled my-0">
+                            {% for error in errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
+
+        {% if next %}
+            <div class="alert alert-info d-flex my-4" role="alert">
+                <div class="align-items-center my-auto me-3"><i class="fa fa-circle-info"></i></div>
+                <div class="access-deny">
+                    {% if user.is_authenticated %}
+                        <p class="my-0">Your account doesn't have access to this page. To proceed, please login with an account that has access.</p>
+                    {% else %}
+                        <p class="my-0">Please login to see the page: <span class="text-muted">{{ next }}</span></p>
+                    {% endif %}
+                </div>
+            </div>
+        {% endif %}
+
+        <form id="signin-form my-4" method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+
+            <input type="hidden" name="next" value="{{ next }}">
+
+            <div class="form-floating mb-3">
+                <input type="text" name="username" id="{{ form.username.auto_id }}" autocomplete="username" class="form-control" placeholder required>
+                <label for="{{ form.username.auto_id }}">{{ form.username.label }}</label>
+
+                {% if form.username.hlep_text %}
+                    <div class="form-text">{{ form.username.help_text|safe }}</div>
+                {% endif %}
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="password" name="password" id="{{ form.password.auto_id }}" autocomplete="current-password" class="form-control" placeholder required>
+                <label for="{{ form.password.auto_id }}">{{ form.password.label }}</label>
+
+                {% if form.password.hlep_text %}
+                    <div class="form-text">{{ form.password.help_text|safe }}</div>
+                {% endif %}
+            </div>
+
+            <button type="submit" value="action" class="btn btn-secondary"><i class="fa fa-unlock"></i> {% trans 'Login' %}</button>
+        </form>
+    </div>
+{% endblock %}

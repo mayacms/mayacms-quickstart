@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+    <head>
+        {% include "themes/default/partials/metadata.html" %}
+    </head>
+    <body>
+        {% include "themes/default/partials/header.html" %}
+
+        <section id="primary" class="container container-fluid py-5">
+            {% block content %}
+                <!-- Content -->
+            {% endblock %}
+        </section>
+
+        {% include "themes/default/partials/footer.html" %}
+    </body>
+</html>
