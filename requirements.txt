@@ -1,1 +1,2 @@
-django >= 6.0
+mayacms @ git+https://github.com/mayacms/mayacms.git
+mayacms-pages-module @ git+https://github.com/iammuhit/django-pages-module.git
