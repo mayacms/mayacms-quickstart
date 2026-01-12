@@ -1,2 +1,5 @@
 mayacms @ git+https://github.com/mayacms/mayacms.git
 mayacms-pages-module @ git+https://github.com/iammuhit/django-pages-module.git
+mayacms-navs-module @ git+https://github.com/iammuhit/django-navs-module.git
+mayacms-posts-module @ git+https://github.com/iammuhit/django-posts-module.git
+mayacms-comments-module @ git+https://github.com/iammuhit/django-comments-module.git
