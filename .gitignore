@@ -5,9 +5,9 @@ __pycache__
 
 ## Distribution / Packaging
 *.egg
-*.egg-info/*
-build/*
-dist/*
+*.egg-info/
+build/
+dist/
 
 ## Environments
 .env
