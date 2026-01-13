@@ -11,6 +11,7 @@ python -m pip install -r requirements.txt
 # Django Application
 python manage.py makemigrations     # Make Database Migration
 python manage.py migrate            # Run Database Migration
+python manage.py collectstatic      # Collect Static Files
 python manage.py runserver          # Run Development Server
 python manage.py createsuperuser    # Create Admin User
 ```
