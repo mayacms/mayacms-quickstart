@@ -114,8 +114,8 @@ LOCALE_PATHS = [BASE_DIR / 'resources/locale']
 # Media Files (Local Files, Uploads)
 # https://docs.djangoproject.com/en/6.0/topics/files/
 
-# MEDIA_ROOT = BASE_DIR / 'storage/files/'
-# MEDIA_URL = 'files/'
+MEDIA_ROOT = BASE_DIR / 'storage/files/'
+MEDIA_URL = 'files/'
 
 
 # Static Files (CSS, JavaScript, Images)
